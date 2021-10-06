@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PhotographerController;
+use App\Http\Controllers\AlbumController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//--------------------------Photographer---------------------
+Route::resource('photographers', PhotographerController::class);
+
+
+//--------------------------Albums---------------------
+Route::get('photographers/{photographer_id}/albums', [AlbumController::class, 'getAlbumsByPhotographer']);
+// Route::resource('photpgraphers/{photographer_id}/albums', AlbumController::class);
