@@ -98,4 +98,10 @@ class PhotographerController extends Controller
     {
         //
     }
+
+    public function loadView()
+    {
+        return view('show');
+    }
+
 }

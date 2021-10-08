@@ -1,0 +1,44 @@
+* {
+    color: blue;
+}
+
+.photographer-bg {
+    width: 100%;
+    height: 100%;
+    background: pink;
+}
+
+.photographer-profile {
+    width: 50%;
+    background: yellow;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20fr 55fr 25fr;
+    border-radius: 5px;
+}
+
+.profile-pic img {
+    margin: 40px 40px;
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.photo-gallery {
+    width: 45%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.pic {
+    position: relative;
+    height: 230px;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}

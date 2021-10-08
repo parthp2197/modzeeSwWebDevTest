@@ -27,3 +27,5 @@ Route::resource('photographers', PhotographerController::class);
 //--------------------------Albums---------------------
 Route::get('photographers/{photographer_id}/albums', [AlbumController::class, 'getAlbumsByPhotographer']);
 // Route::resource('photpgraphers/{photographer_id}/albums', AlbumController::class);
+
+Route::get('showphotographer', [PhotographerController::class, 'loadView']);
