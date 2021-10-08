@@ -104,4 +104,9 @@ class PhotographerController extends Controller
         return view('show');
     }
 
+    public function getJsonData()
+    {
+        return response()->file(resource_path() . '\assets\js\data\landscapes.json');
+    }
+
 }

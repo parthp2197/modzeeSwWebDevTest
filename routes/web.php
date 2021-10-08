@@ -29,3 +29,5 @@ Route::get('photographers/{photographer_id}/albums', [AlbumController::class, 'g
 // Route::resource('photpgraphers/{photographer_id}/albums', AlbumController::class);
 
 Route::get('showphotographer', [PhotographerController::class, 'loadView']);
+
+Route::get('landscapes', [PhotographerController::class, 'getJsonData']);

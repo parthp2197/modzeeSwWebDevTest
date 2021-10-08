@@ -13,48 +13,50 @@
 
     <div class="photographer-bg">
 
-        <div class="photographer-profile">
-            
-            <div class="profile-pic">                
-                <img src="{{ URL::asset("images/profile.jpeg") }}" alt="photographer">
-            </div>
-            <div class="info">
-                <h1>photographer name</h1>
-                <h4 id="info-label"><b>Bio</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iusto recusandae ullam praesentium quasi nisi inventore quam odit eligendi voluptatem.</p>
+        <div class="container">
 
-            </div>
-            <div class="contact-details">
-                <h4 ><b>Phone</b><br>number</h4>
-                <h4><b>email</b><br>email address</h4>
-                <h4>Address</h4>
-            </div>
+            <div class="photographer-profile">
+                
+                <div class="profile-pic">                
+                <img src={{ URL::asset("img/profile.jpeg") }} alt="photographer">
+                </div>
+                <div class="info">
+                    
+                    
 
 
+                </div>
+                <div class="contact-details">
+                    <h4 ><b>Phone</b><br>number</h4>
+                    <h4><b>email</b><br>email address</h4>
+                    
+                </div>
+
+
+            </div>
+
+            <div class="photo-gallery">
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape1.jpeg") }} alt="picture">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad, illum cumque cum non est enim praesentium magni nihil nesciunt?</p>
+                </div>
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape2.jpeg") }} alt="picture">
+                </div>
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape3.jpeg") }} alt="picture">
+                </div>
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape4.jpeg") }} alt="picture">
+                </div>
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape5.jpeg") }} alt="picture">
+                </div>
+                <div class="pic">
+                    <img src={{ URL::asset("img/landscape6.jpeg") }} alt="picture">
+                </div>
+            </div>
         </div>
-
-        <div class="photo-gallery">
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape1.jpeg") }} alt="picture">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad, illum cumque cum non est enim praesentium magni nihil nesciunt?</p>
-            </div>
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape2.jpeg") }} alt="picture">
-            </div>
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape3.jpeg") }} alt="picture">
-            </div>
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape4.jpeg") }} alt="picture">
-            </div>
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape5.jpeg") }} alt="picture">
-            </div>
-            <div class="pic">
-                <img src={{ URL::asset("images/landscape6.jpeg") }} alt="picture">
-            </div>
-        </div>
-
         
 
     </div>
@@ -63,7 +65,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready
+        $(document).ready(function(r){
+            var $info = $('.info');
+            var $profile_pic = $('.profile-pic');
+            
+           $.getJSON("landscapes", function(data){
+               console.log(data);
+               $info.append('<h2>' + data.name + '</h2>');
+               $info.append('<h4 id="info-label"><b>Bio</b></h4>');
+               $info.append('<p>' + data.bio + '</p>');
+               
+               $.each(data, function(i, data){
+                    // $info.append('<li>' + data.id + '</li>');
+               })
+           })
+        });
     </script>
 
 </body>
