@@ -27,6 +27,7 @@
             <div class="contact-details">
                 <h4 ><b>Phone</b><br>number</h4>
                 <h4><b>email</b><br>email address</h4>
+                <h4>Address</h4>
             </div>
 
 
